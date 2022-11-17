@@ -19,17 +19,17 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Application</h1>
-      <BrowserRouter>
+      {/* <BrowserRouter>
         <Routes>
-          <Route path="/dashboard" element={<Dashboard user={user}/>}>
+          <Route path="/dashboard" element={<Dashboard />}>
           </Route>
           <Route path="/other" element={<h1>hello</h1>}>
             
           </Route>
          
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
+      <Dashboard />
     </div>
   );
 }

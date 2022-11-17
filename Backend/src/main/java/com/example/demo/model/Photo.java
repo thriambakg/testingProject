@@ -18,24 +18,24 @@ public class Photo {
 	private long id;
 	
 	@Column(name = "photo_name")
-	private String username;
+	private String photoname;
 	
 	@Column(name = "user_name")
-	private String password;
+	private String username;
 	
-	@Column(name = "photo_img")
-	private File photo;
+//	@Column(name = "photo_img")
+//	private File photo;
 	
 	public Photo() {
 		
 	}
 
 	
-	public Photo(String username, String password, File photo) {
+	public Photo(String photoname, String username) {
 		super();
 		this.username = username;
-		this.password = password;
-		this.photo = photo;
+		this.photoname = photoname;
+		//this.photo = photo;
 	}
 
 	public long getId() {
@@ -54,19 +54,19 @@ public class Photo {
 		this.username = username;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getPhotoname() {
+		return photoname;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setPhotoname(String photoname) {
+		this.photoname = photoname;
 	}
 
-	public File getPhoto() {
-		return photo;
-	}
-
-	public void setPhoto(File photo) {
-		this.photo = photo;
-	}
+//	public File getPhoto() {
+//		return photo;
+//	}
+//
+//	public void setPhoto(File photo) {
+//		this.photo = photo;
+//	}
 }
