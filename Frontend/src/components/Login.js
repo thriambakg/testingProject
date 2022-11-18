@@ -2,6 +2,8 @@
 import React, {useState} from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import Signup from './Signup';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -25,9 +27,15 @@ export default function Login({setToken, setUser}) {
 
       }
 
+    //let navigate = useNavigate();
+    const signUp = () => {
+        return <Signup />
+    }
+
   return(
     <div className="login">
       <h1>Please Log In</h1>
+      <button className='btn btn-primary' onClick={(signUp)}>Sign Up</button>
       <form onSubmit={handleSubmit}>
         <label>
           <p>Username</p>

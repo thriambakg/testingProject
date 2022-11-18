@@ -1,8 +1,10 @@
 import './App.css';
 import React, {useState} from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Router, Switch, Route } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Login from './Login';
+import Signup from './Signup';
+import history from '../history';
 
 function App() {
   const [token, setToken] = useState();
@@ -19,17 +21,21 @@ function App() {
 
   return (
     <div className="App">
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/dashboard" element={<Dashboard />}>
+      {/* <BrowserRouter> */}
+        <Router history={history}>
+          
+          <Route path="/" element={<Login />}>
           </Route>
-          <Route path="/other" element={<h1>hello</h1>}>
-            
+          <Route path="/signUp" element={<Signup />}>
           </Route>
-         
-        </Routes>
-      </BrowserRouter> */}
+          <Route>
+
+          </Route>
+        
+        </Router>
+      {/* </BrowserRouter> */}
       <Dashboard />
+      <Signup />
     </div>
   );
 }

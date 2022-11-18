@@ -11,28 +11,29 @@ import com.example.demo.repository.PhotoRepository;
 import com.example.demo.repository.UserRepository;
 
 @SpringBootApplication
-public class SpringbootBackendSe317Application implements CommandLineRunner {
+public class SpringbootBackendSe317Application  {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootBackendSe317Application.class, args);
 	}
 	
-	@Autowired
-	private UserRepository userRepository;
 	
-	@Autowired
-	private PhotoRepository photoRepository;
+//	@Autowired
+//	private UserRepository userRepository;
+//	
+//	@Autowired
+//	private PhotoRepository photoRepository;
 
-	@Override
-	public void run(String... args) throws Exception {
-		// TODO Auto-generated method stub
-		this.userRepository.save(new User("tonynuss", "password"));
-		this.userRepository.save(new User("billgates", "microsoft"));
-		
-		this.photoRepository.save(new Photo("dog", "billgates"));
-		this.photoRepository.save(new Photo("dog", "billgates"));
-
-		
-	}
+//	@Override
+//	public void run(String... args) throws Exception {
+//		// TODO Auto-generated method stub
+//		this.userRepository.save(new User("tonynuss", "password"));
+//		this.userRepository.save(new User("billgates", "microsoft"));
+//		
+//		this.photoRepository.save(new Photo("dog", "billgates"));
+//		this.photoRepository.save(new Photo("dog", "billgates"));
+//
+//		
+//	}
 
 }
