@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.web.multipart.MultipartFile;
+
 @Entity
 @Table(name = "photos")
 public class Photo {
@@ -23,19 +25,19 @@ public class Photo {
 	@Column(name = "user_name")
 	private String username;
 	
-//	@Column(name = "photo_img")
-//	private File photo;
+	@Column(length = 500000000, name = "photo_img")
+	private byte[] photo;
 	
 	public Photo() {
 		
 	}
 
 	
-	public Photo(String photoname, String username) {
+	public Photo(String photoname, String username, byte[] photo) {
 		super();
 		this.username = username;
 		this.photoname = photoname;
-		//this.photo = photo;
+		this.photo = photo;
 	}
 
 	public long getId() {
@@ -62,11 +64,11 @@ public class Photo {
 		this.photoname = photoname;
 	}
 
-//	public File getPhoto() {
-//		return photo;
-//	}
-//
-//	public void setPhoto(File photo) {
-//		this.photo = photo;
-//	}
+	public byte[] getPhoto() {
+		return photo;
+	}
+
+	public void setPhoto(byte[] photo) {
+		this.photo = photo;
+	}
 }

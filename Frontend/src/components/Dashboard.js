@@ -1,15 +1,18 @@
 import React from 'react';
 import DashboardService from '../services/DashboardService';
+import { Link, Route } from "react-router-dom";
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      photos:[]
+      photos:[],
+      username: ''
     }
   }
 
   componentDidMount() {
+    // console.log(this.props.route.params.username);
     DashboardService.getPhotos().then((Response) => {
       this.setState({photos: Response.data})
     });
@@ -19,7 +22,10 @@ class Dashboard extends React.Component {
     return (
       <div>
         <h1 className="text-center">Photo List</h1>
-        <input type="file" name="file"></input>
+        <Link className='btn btn-primary' to="/">Logout</Link>
+        <Link className='btn btn-primary' to="/addPhoto">Add Photo</Link>
+
+        {/* <input type="file" name="file"></input> */}
         <table className='table table-striped'>
           <thead>
             <tr>
@@ -46,15 +52,4 @@ class Dashboard extends React.Component {
   }
 }
 
-export default Dashboard
-
-// export default function Dashboard({user}) {
-//   if(user===undefined){
-//     return(<h2>shucks</h2>);
-//   }
-//   else{
-//   return(
-//     <h2>{user.token}</h2>
-//   );
-// }
-// }
+export default Dashboard;

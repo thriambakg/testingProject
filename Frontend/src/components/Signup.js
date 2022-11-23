@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import SignupService from '../services/SignupService';
+import { Link, useNavigate } from "react-router-dom";
 
 class Signup extends Component {
     constructor(props) {
@@ -15,15 +16,18 @@ class Signup extends Component {
         this.saveUser = this.saveUser.bind(this);
     }
 
+    //save entered user info
     saveUser = (e) => {
         e.preventDefault();
         let user = {username: this.state.username, password: this.state.password};
         console.log(user);
 
         SignupService.createUser(user).then(res => {
-            this.props.history.push('/dashboard');
+            console.log(res);
+            alert("Created user: " + this.state.username);
         });
     }
+
     changeUsernameHandler= (event) => {
         this.setState({username: event.target.value});
     }
@@ -52,6 +56,7 @@ class Signup extends Component {
                                             value={this.state.password} onChange={this.changePasswordHandler} />
                                     </div>
                                     <button className='btn btn-success' onClick={this.saveUser}>Save</button>
+                                    <Link className='btn btn-primary' to="/">Back</Link>
                                 </form>
                             </div>
                         </div>
@@ -62,4 +67,4 @@ class Signup extends Component {
     }
 }
 
-export default Signup
+export default Signup;

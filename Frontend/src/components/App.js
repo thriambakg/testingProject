@@ -1,18 +1,18 @@
 import './App.css';
-import React, {useState} from 'react';
-import { Router, Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Dashboard from './Dashboard';
 import Login from './Login';
 import Signup from './Signup';
-import history from '../history';
+import AddPhoto from './AddPhoto';
 
-function App() {
-  const [token, setToken] = useState();
-  const [user, setUser] = useState();
+export default function App() {
+  // const [token, setToken] = useState();
+  // const [user, setUser] = useState();
 
-  if(!token) {
-    return <Login setToken={setToken} setUser={setUser} />
-  }
+  // if(!token) {
+  //   return <Login setToken={setToken} setUser={setUser} />
+  // }
   //console.log(user);
 
 
@@ -20,24 +20,18 @@ function App() {
 
 
   return (
-    <div className="App">
-      {/* <BrowserRouter> */}
-        <Router history={history}>
-          
+      <BrowserRouter>
+        <Routes>       
           <Route path="/" element={<Login />}>
           </Route>
           <Route path="/signUp" element={<Signup />}>
           </Route>
-          <Route>
-
-          </Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+        </Route>
+        <Route path="/addPhoto" element={<AddPhoto />}>
+        </Route>
         
-        </Router>
-      {/* </BrowserRouter> */}
-      <Dashboard />
-      <Signup />
-    </div>
+    </Routes>   
+      </BrowserRouter>
   );
 }
-
-export default App;
