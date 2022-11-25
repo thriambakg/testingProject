@@ -56,7 +56,7 @@ class AddPhoto extends Component {
                                             value={this.state.password} onChange={this.changePhotoHandler} />
                                     </div>
                                     <button className='btn btn-success' onClick={this.uploadPhoto}>Save</button>
-                                    <Link className='btn btn-primary' to="/">Back</Link>
+                                    <Link className='btn btn-primary' to="/dashboard">Back</Link>
                                 </form>
                             </div>
                         </div>
