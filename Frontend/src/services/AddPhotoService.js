@@ -6,6 +6,6 @@ class AddPhotoService {
     createPhoto(photo) {
         return axios.post(PHOTOS_REST_API_URL, photo);
     }
-}
+} 
 
 export default new AddPhotoService()

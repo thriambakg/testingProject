@@ -7,6 +7,12 @@ class PhotoService {
     getPhotos() {
         return axios.get(PHOTOS_REST_API_URL);
     }
+
+    searchPhoto(name)
+    {
+        return axios.get(PHOTOS_REST_API_URL + '/' + name);
+    }
+
 }
 
 export default new PhotoService();

@@ -5,6 +5,7 @@ import Dashboard from './Dashboard';
 import Login from './Login';
 import Signup from './Signup';
 import AddPhoto from './AddPhoto';
+import Search from './Search';
 
 export default function App() {
   // const [token, setToken] = useState();
@@ -38,6 +39,8 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />}>
         </Route>
         <Route path="/addPhoto" element={<AddPhoto />}>
+        </Route>
+        <Route path="/search" element={<Search />}>
         </Route>
         
     </Routes>   

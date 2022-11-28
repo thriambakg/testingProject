@@ -2,6 +2,8 @@ import { Component } from "react";
 import { Link } from "react-router-dom";
 import AddPhotoService from "../services/AddPhotoService";
 
+
+
 class AddPhoto extends Component {
     constructor(props) {
         super(props)
@@ -16,7 +18,7 @@ class AddPhoto extends Component {
         this.changePhotoHandler = this.changePhotoHandler.bind(this);
     }
 
-
+    
     changePhotonameHandler = (event) => {
         this.setState({photoname: event.target.value});
     }
@@ -29,13 +31,13 @@ class AddPhoto extends Component {
         e.preventDefault();
         const fd = new FormData();
         fd.append('image', this.state.photo, this.state.photo.name);
-        let newPhoto = {photoname: this.state.photoname, username: 'user', photo: fd};
+        let newPhoto = this.state;
         AddPhotoService.createPhoto(newPhoto).then(res => {
             console.log(res);
             alert("added new photo");
         });
     }
-
+    
     render() {
         return (
             <div>
